@@ -1,6 +1,7 @@
 # Projeto - PokeGendex
 - Meu **Quinto** Projeto 
 - Listagem de Pokémons
+- Responsivo
 
 <br/>
 
