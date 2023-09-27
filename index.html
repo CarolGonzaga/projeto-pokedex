@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/css/style.css">
+        <title>PokeGendex - Listagem de Pokémons</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="logo">
+                <img src="./src/imagens/logo.fw.png" alt="">
+                <div class="nome">
+                    <p class="titulo">PokeGendex</p>
+                    <p class="subtitulo">Listagem de Pokémons</p>
+                </div>
+            </div>
+
+            <div class="barra-pesquisa">
+                <div class="pesquisa-nome">
+                    <input type="search" class="campo-pesquisa" id="pesq-nome" placeholder="Filtrar por nome">
+                </div>
+
+                <div class="pesquisa-tipo">
+                    <div id="pesq-tipo">
+                        <p id="textoSelecionado">Filtrar por tipo</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="seta" viewBox="0 0 16 16"> <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/> </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="botao">
+                <input type="checkbox" class="checkbox" id="botao-tema"/>
+                <label class="label" for="botao-tema">
+                    <div class="barra">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="bola"><path fill="currentColor" d="M12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2m0 2c-4.08 0-7.45 3.05-7.94 7h4.07c.44-1.73 2.01-3 3.87-3c1.86 0 3.43 1.27 3.87 3h4.07c-.49-3.95-3.86-7-7.94-7m0 16c4.08 0 7.45-3.05 7.94-7h-4.07c-.44 1.73-2.01 3-3.87 3c-1.86 0-3.43-1.27-3.87-3H4.06c.49 3.95 3.86 7 7.94 7m0-10a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2Z"/></svg>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <nav id="filtra-tipos" class="oculto">
+            <ul id="lista-tipos">
+                <li class="opcoes">
+                    <img src="./src/imagens/aco.fw.png" alt="Aço">
+                    <p>Aço</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/agua.fw.png" alt="Água">
+                    <p>Água</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/dragao.fw.png" alt="Dragão">
+                    <p>Dragão</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/eletrico.fw.png" alt="Elétrico">
+                    <p>Elétrico</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/fada.fw.png" alt="Fada">
+                    <p>Fada</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/fantasma.fw.png" alt="Fantasma">
+                    <p>Fantasma</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/fogo.fw.png" alt="Fogo">
+                    <p>Fogo</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/gelo.fw.png" alt="Gelo">
+                    <p>Gelo</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/grama.fw.png" alt="Grama">
+                    <p>Grama</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/inseto.fw.png" alt="Inseto">
+                    <p>Inseto</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/lutador.fw.png" alt="Lutador">
+                    <p>Lutador</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/normal.fw.png" alt="Normal">
+                    <p>Normal</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/pedra.fw.png" alt="Pedra">
+                    <p>Pedra</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/psiquico.fw.png" alt="Psiquico">
+                    <p>Psiquico</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/terra.fw.png" alt="Terra">
+                    <p>Terra</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/veneno.fw.png" alt="Veneno">
+                    <p>Veneno</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/voador.fw.png" alt="Voador">
+                    <p>Voador</p>
+                </li>
+                <li class="opcoes">
+                    <img src="./src/imagens/pokeball.fw.png" alt="Todos">
+                    <p>Todos</p>
+                </li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section class="lista">
+                <ul class="cards" id="lista-pokemon">
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright © 2023 - Site criado por <a href="#">CarolGonzaga</a></p>
+        </footer>
+
+        <script src="./src/js/index.js" defer></script>
+    </body>
+    
+</html>

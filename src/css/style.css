@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --cor01: #3292C8;
+    --cor02: #70B3D9;
+    --cor03: #0872AE;
+    --cor04: #FFFFFF;
+    --cor05: #D9D9D9;
+    --cor06: #FFB84C;
+    --cor07: #000000;
+    --cor08: rgba(255, 255, 255, 0.7);
+    --cor09: rgba(255, 255, 255, 0.5);
+}
+
+.dark-modo:root {
+    --cor01: #041C32;
+    --cor02: #0F2139;
+    --cor03: #04293A;
+    --cor04: #064663;
+    --cor05: #D9D9D9;
+    --cor06: #FFB84C;
+    --cor07: #FFFFFF;
+    --cor08: rgba(0, 0, 0, 0.7);
+    --cor09: rgba(0, 0, 0, 0.2);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    background-image: url('../imagens/8270321.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.body-escuro {
+    background-image: url('../imagens/8270323.jpg');
+}
+
+header {
+    position: relative;
+    background-color: var(--cor01);
+    color: white;
+    height: 100px;
+    width: auto;
+    margin: 15px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .logo {
+    width: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+header .logo img {
+    max-width: 30%;
+    padding-left: 20px;
+}
+
+header .nome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-left: 20px;
+    text-align: center;
+}
+
+header .titulo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header .subtitulo {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+header .barra-pesquisa {
+    width: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header .pesquisa-nome {
+    padding-left: 20px;
+}
+
+header #pesq-nome {
+    background-color: var(--cor08);
+    color: var(--cor07);
+    border: none;
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    outline: none;
+    border-radius: 6px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+::-webkit-input-placeholder  { 
+    color:var(--cor07);
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .pesquisa-tipo {
+    padding-left: 20px;
+}
+
+header #pesq-tipo {
+    background-color: var(--cor08);
+    color: var(--cor07);
+    font-size: 12.3px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+header #seta {
+    width: 12px;
+    color: var(--cor07);
+    transition: transform .5s;
+}
+
+.seta-virada {
+    transform: rotate(180deg);
+}
+
+header .botao {
+    width: 20%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+header .checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+header .barra {
+    background-color: var(--cor05);
+    width: 60px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin: 20px;
+    position: relative;
+}
+
+header .bola {
+    position: absolute;
+    top: -5px;
+    left: -4px;
+    background-color: var(--cor06);
+    color: black;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    transform: translate(0px);
+    transition: transform .3s ease-in-out;
+}
+
+header .checkbox:checked + .label .bola {
+    transform: translateX(38px);
+    background-color: black;
+    color: white;
+}
+
+nav {
+    background-color: var(--cor01);
+    color: white;
+    border-radius: 50px;
+    min-height: fit-content;
+    width: 55%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.oculto {
+    display: none;
+}
+
+nav #lista-tipos {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 6px;
+    overflow: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .opcoes {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--cor09);
+    border-radius: 30px;
+    color: var(--cor07);
+    font-size: 14px;
+    font-weight: normal;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+nav .opcoes:hover {
+    background-color: var(--cor08);
+    border-radius: 30px;
+}
+
+nav .opcoes:active {
+    transform: scale(90%);  
+}
+
+nav .opcoes img {
+    width: 30px;
+    padding-right: 10px;
+}
+
+main {
+    min-height: fit-content;
+}
+
+.resultado {
+    padding: 30px;
+    font-size: 16px;
+    color: var(--cor07);
+}
+
+main .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+main .cards li {
+    position: relative;
+    width: 227px;
+    height: 324px;
+    background-color: var(--cor01);
+    border-radius: 10px;
+    list-style: none;
+    margin: 20px;
+}
+
+main .cards .card-pokemon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 206px;
+    height: 310px;
+    background-color: var(--cor02);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 2px solid var(--cor03);
+    display: grid;
+    grid-template-rows: 10% 45% 45%;
+}
+
+main .cards .ficha {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 78% 22%;
+    align-items: center;
+    position: absolute;
+    top: -2px;
+    left: 0%;
+    transform: translate(-3%);
+    background-color: var(--cor04);
+    width: 214px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--cor03);
+}
+
+main .cards .ficha .nome {
+    grid-column: 1;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--cor07);
+    padding-left: 10px;
+}
+
+main .cards .ficha .nome svg {
+    width: 12px;
+}
+
+main .cards .ficha .tipos {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    width: 40px;
+}
+
+main .cards .ficha .tipos img {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+}
+
+main .cards .foto-pokemon img {
+    grid-row: 2;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 40%;
+    width: auto;
+}
+
+main .cards .texto-pokemon {
+    grid-row: 3;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    color: var(--cor07);
+    background-color: var(--cor04);
+    width: 100.7%;
+    height: 100%;
+    border: 1px solid var(--cor03);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    padding-top: 20px;
+    position: absolute;
+    left: -0.4%;
+    bottom: -1%;
+}
+
+main .cards .texto-pokemon .descricao {
+    max-height: 80%;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+footer {
+    position: relative;
+    background-color: var(--cor01);
+    height: 46px;
+    margin: 15px;
+    border-radius: 50px;
+}
+
+footer p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+}
+
+footer a {
+    font-weight: 800;
+    color: #fff;
+}
+
+/* Scroll Bar */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #e9e8e8ce;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--cor03);
+    border-radius: 10px;
+    border: 3px solid #fff;
+}
+
+@media(max-width: 999px){
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+    }
+    
+    header .logo {
+        justify-content: center;
+        padding: 10px;
+        width: 90%;
+        padding-bottom: 20px;
+    }
+    
+    header .logo img {
+        padding: 0;
+        max-width: 20%;
+    }
+
+    header .botao {
+        padding: 0px;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header .barra-pesquisa {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    header #pesq-tipo {
+        width: auto;
+    }
+
+    header .pesquisa-nome {
+        padding: 0;
+        min-width: 40%;
+    }
+
+    header .pesquisa-tipo {
+        padding: 0;
+        min-width: 30%;
+    }
+
+    nav {
+        border-radius: 30px;
+        height: auto;
+        padding: 10px;
+    }
+    
+    nav #lista-tipos {
+        min-width: auto;
+        margin: auto;
+        padding: 10px;
+        border-radius: 6px;
+        overflow: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 100px);
+        justify-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    nav .opcoes {
+        width: 120px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav .opcoes img {
+        width: 40px;
+        padding-left: 3px;
+    }
+}
+
+@media(max-width: 539px){
+
+    header {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+    }
+    
+    header .logo {
+        justify-content: center;
+    }
+    
+    header .logo img {
+        padding: 0;
+        max-width: 20%;
+    }
+
+    header .botao {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header .barra-pesquisa {
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header #pesq-nome {
+        width: 100%;
+    }
+
+    header .pesquisa-nome {
+        padding: 0;
+        margin: 5px;
+        width: 300px;
+    }
+
+    header #pesq-tipo {
+        width: 100%;
+    }
+
+    header .pesquisa-tipo {
+        padding: 0;
+        margin: 5px;
+        width: 300px;
+    }
+
+    nav {
+        width: auto;
+        height: auto;
+        margin: 15px;
+        border-radius: 30px;
+    }
+    
+}
