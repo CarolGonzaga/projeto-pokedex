@@ -36,6 +36,7 @@ body {
     background-image: url('../imagens/8270321.jpg');
     background-attachment: fixed;
     background-size: cover;
+    letter-spacing: 1px;
 }
 
 .body-escuro {
